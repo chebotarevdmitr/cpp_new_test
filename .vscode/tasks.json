@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Project (Debug)",
+            "type": "shell",
+            "command": "/usr/bin/g++-15",
+            "args": [
+                "-g",                           // Отладочная информация
+                "-O0",                          // Без оптимизации (для отладки)
+                "-Wall", "-Wextra",             // Больше предупреждений
+                "-std=c++20",
+                "-o", "${fileDirname}/build/${fileBasenameNoExtension}", // В папку build
+                "${fileDirname}/*.cpp"          // Компилирует все .cpp в папке
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": "$gcc",
+            "detail": "Debug build using g++-15"
+        },
+        {
+            "label": "Build Project (Release)",
+            "type": "shell", // shell — потому что используем *, который обрабатывает терминал
+            "command": "/usr/bin/g++-15",
+            "args": [
+                "-O2",                          // Оптимизация
+                "-DNDEBUG",                     // Отключить assert
+                "-Wall", "-Wextra",
+                "-std=c++20",
+                "-o", "${fileDirname}/build/${fileBasenameNoExtension}",
+                "${fileDirname}/*.cpp"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": "$gcc",
+            "detail": "Release build using g++-15"
+        }
+    ]
+}
