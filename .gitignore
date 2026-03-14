@@ -53,7 +53,6 @@ CMakeCache.txt                      # Кэш CMake
 CMakeFiles/                         # Внутренние файлы CMake
 cmake_install.cmake                 # Скрипт установки
 Makefile                            # Сгенерированный Makefile
-cm                                  # Скрипт установки
 install_manifest.txt                # Список установленных файлов
 compile_commands.json               # Команды компиляции (для IDE и стат. анализаторов)
 Testing/                            # Результаты тестов CTest
